@@ -28,7 +28,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 
 .inner-wrap {max-width: 980px; margin: 0 auto;}
 .flex-contain {display: flex;}
-.bg-wrap {background-color: #2133b5;  position: relative;}
+.bg-wrap {background-color: #2133b5;  position: relative; overflow: hidden;}
 .content-tit{ padding-bottom: 100px;}
 
 #header {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0);  width: 100%; z-index: 999; }
@@ -39,8 +39,11 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #header .gnb-wrap .top-gnb > li:not(:last-child) {padding-right: 20px;}
 #header .gnb-wrap .main-gnb > li {padding: 30px 25px; position: relative;}
 #header .gnb-wrap .main-gnb > li:last-child {padding-right: 0;}
-#header .gnb-wrap .main-gnb > li > a {padding: 5px;}
-#header .gnb-wrap .main-gnb > li:hover  > a{background-color: #fff; color: #1a2939;}
+#header .gnb-wrap .main-gnb > li > a {padding: 5px; position: relative; overflow: hidden; display: inline-block; z-index: 5; text-align: center;}
+#header .gnb-wrap .main-gnb > li:hover > a {background-color: #1a2939; color: #1a2939; transition: all 0.2s ease-out; }
+#header .gnb-wrap .main-gnb > li:hover > a:before{ transform: rotate(-30deg) translate3d(0, -75%, 0); transition: transform 0.3s cubic-bezier(0.1, 0.32, 0.39, 0.85); opacity: 1; z-index: -1;}
+#header .gnb-wrap .main-gnb > li > a:before{content: ''; display: block; width: 300%; height: 300%; position: absolute; top: 0; left: 0; background-color: #Fff; transform: rotate(-30deg) translate3d(0, -200%, 0); transform-origin: center bottom; transition: transform 0.3s cubic-bezier(0.1, 0.32, 0.39, 0.85); opacity: 0;}
+#header .gnb-wrap .main-gnb > li:hover > a  > span {color: #1a2939; position: relative; }
 #header .gnb-wrap .main-gnb > li > ul {display: none;}
 #header .gnb-wrap .main-gnb > li:hover > ul {display: flex; position: absolute; top: 80px; left: 30px; width: 50vw; line-height: 16px;}
 #header .gnb-wrap .main-gnb > li > ul > li:not(:first-child) {padding-left: 25px; }
@@ -53,11 +56,11 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .bg-deco-red {position: absolute; width: 0; height: 0; border-style: solid; border-width: 100px 200px 0 0; border-color: #d03251 transparent transparent transparent; }
 #main .bg-deco-blue {position: absolute; width: 0; height: 0; bottom: 0; right: 0; border-style: solid; border-width: 0 0 100px 200px; border-color: transparent transparent #2133b5 transparent;}
 #main .content-wrap > ul.slick-img-wrap > li.on {opacity: 1; transform: translate(0, 0) scale3d(1, 1, 1);; transition: transform .75s 0s cubic-bezier(0.165, 0.84, 0.44, 1),opacity .4s 0s;}
-#main .content-wrap > ul.slick-img-wrap > li.off {opacity: 0; transform: translate(10%, -5%) scale3d(1.15, 1.1, 15);; transition: transform .4s 0s cubic-bezier(0.445, 0.05, 0.55, 0.95),opacity .2s 0s; }
-#main .content-wrap > ul.slick-img-wrap > li {position: absolute; top: 0; right: 0; background-size: cover; background-repeat: no-repeat; background-position-y: 30px; width: 100vw; height: 1000px; z-index: 0;}
+#main .content-wrap > ul.slick-img-wrap > li.off {opacity: 0; transform: translate(10%, -5%) scale3d(1.15, 1.1, 15);; transition: transform .4s 0s cubic-bezier(0.445, 0.05, 0.55, 0.95),opacity .2s 0s;}
+#main .content-wrap > ul.slick-img-wrap > li {position: absolute; top: 0; right: 0; background-size: cover; background-repeat: no-repeat; background-position-y: 30px; width: 100vw; height: 1000px; z-index: 0;  overflow: hidden;}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(1) {background-image: url('../images/slick_02.png');}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(2) {background-image: url('../images/slick_01.png');}
-#main .content-wrap > ul.slick-img-wrap > li:nth-child(3) {background-image: url('../images/slick_03_19.png'); background-position-x: 250px;}
+#main .content-wrap > ul.slick-img-wrap > li:nth-child(3) {background-image: url('../images/slick_03.png');}
 #main .content-wrap > ul.slick-txt-wrap {position: relative; padding: 200px 0 100px; height: 45vw;}
 #main .content-wrap > ul.slick-txt-wrap > li { position: absolute; top: 250px; left: 10%; }
 #main .content-wrap > ul.slick-txt-wrap > li > .inner-wrap{height: auto; z-index: 1;}

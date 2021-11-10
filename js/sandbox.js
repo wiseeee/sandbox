@@ -1,5 +1,9 @@
 'use strict';
 
+$('div.menu-mo a').on('click', function() {
+  $('#header .gnb-wrap').toggleClass('on')
+})
+
 setImageSlide('#main .slick-wrap', 1);
 
 function setImageSlide(selector, first) {
@@ -53,7 +57,7 @@ function sqrareCheckScroll() {
   var scrollAmt = $(document).scrollTop();
   if(scrollAmt < 200) {
     $('.right-btn').addClass('stop');
-    $('.right-btn').css({'position': 'absolute', 'top': '45vw'});
+    $('.right-btn').css({'position': 'absolute', 'top': '44.25vw'});
   } else if(scrollAmt >= 200 && scrollAmt < 458) {
     $('.right-btn').removeClass('stop');
   } else {

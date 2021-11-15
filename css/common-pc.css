@@ -18,10 +18,10 @@ i[class^="fa"] span {position: absolute; left: -9999px;}
 br.only-m {content: '';}
 br.only-m::after {content: '\00a0';}
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap');
 
 /* common */
-body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; color: #fff; background: #ffffff; position: relative;}
+body {font-family: 'NotoSansKR', 'Montserrat', sans-serif; font-weight: 900; font-size: 16px; color: #fff; background: #ffffff; position: relative;}
 #wrapper {max-width: 1024px; overflow: hidden;}
 #skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: rgba(0, 0, 0, 0.7); color: #ffffff; font-size: 16px; transition: top 0.3s; z-index: 10000;}
 #skip-nav:focus {top: 0;}
@@ -34,7 +34,9 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #header {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0);  width: 100%; z-index: 999; }
 #header .flex-contain {justify-content: space-between; align-items: center; padding-top: 20px;}
 #header .logo-wrap {width: 160px;}
+#header .gnb-wrap .bg-deco-blue-mo{display: none;}
 #header .gnb-wrap > ul {display: flex; justify-content: flex-end; align-items: center;}
+#header .gnb-wrap > a {display: none;}
 #header .gnb-wrap .top-gnb > li {font-size: 12px;}
 #header .gnb-wrap .top-gnb > li:not(:last-child) {padding-right: 20px;}
 #header .gnb-wrap .main-gnb > li {padding: 30px 25px; position: relative;}

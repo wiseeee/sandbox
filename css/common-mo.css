@@ -58,10 +58,11 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap {position: relative;}
 #main .bg-deco-red {position: absolute; width: 0; height: 0; border-style: solid; border-width: 150px 300px 0 0; border-color: #d03251 transparent transparent transparent; }
 #main .bg-deco-blue {position: absolute; width: 0; height: 0; bottom: 0; right: 0; border-style: solid; border-width: 0 0 100px 200px; border-color: transparent transparent #2133b5 transparent;}
+#main .content-wrap {margin-bottom: 18vw;}
 #main .content-wrap > ul.slick-txt-wrap {margin-bottom: 150px;}
 #main .content-wrap > ul.slick-img-wrap > li.on {opacity: 1; transform: translate(0, 0) scale3d(1, 1, 1);; transition: transform .75s 0s cubic-bezier(0.165, 0.84, 0.44, 1),opacity .4s 0s;}
 #main .content-wrap > ul.slick-img-wrap > li.off {opacity: 0; transform: translate(10%, -5%) scale3d(1.15, 1.1, 15);; transition: transform .4s 0s cubic-bezier(0.445, 0.05, 0.55, 0.95),opacity .2s 0s;}
-#main .content-wrap > ul.slick-img-wrap > li {position: absolute; top: 0; right: 0; background-size: 200%; background-repeat: no-repeat; background-position: top center; width: 100vw; height: 1000px; z-index: 0;  overflow: hidden;}
+#main .content-wrap > ul.slick-img-wrap > li {position: absolute; top: 0; right: 0; background-size: 200%; background-repeat: no-repeat; background-position: top center; width: 100vw; height: 2000px; z-index: 0;  overflow: hidden;}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(1) {background-image: url('../images/slick_02_mo.png');}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(2) {background-image: url('../images/slick_01_mo.png');}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(3) {background-image: url('../images/slick_03_mo.png');}
@@ -77,7 +78,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap .tit-txt {position: relative; font-size: 8.75vw; color: #e3114e; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1;}
 #main .content-wrap .tit-more {position: relative;display: block; font-size: 5vw; margin-left: 5vw; margin-top: 1vw;}
 #main .content-wrap .btn-wrap {margin-top: 60px; position:relative; z-index: 1;}
-#main .content-wrap .btn-wrap .btn-main-box {border: 1px solid #fff; padding: 3vw 5vw; cursor: pointer; font-size: 4vw;}
+#main .content-wrap .btn-wrap .btn-main-box {border: 1px solid #fff; padding: 2vw 4vw; cursor: pointer; font-size: 3vw;}
 #main .content-wrap .btn-wrap .btn-main-box:hover {background-color: #fff; color: #1a2939;}
 #main .content-wrap .control > a.prev,
 #main .content-wrap .control > a.next {position: absolute; top: 60%; width: 40px; font-size: 6vw;}
@@ -88,12 +89,15 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 
 
 
-#main .tit-box-wrap {overflow: hidden; white-space: nowrap; transform: translate3d(0, 0, 0);}
-#main .tit-box-wrap.on {animation: showing 2s cubic-bezier(0.19, 1, 0.22, 1);}
-#main .tit-box-wrap .tit-cnt-txt {display: inline-block; font-size: 8.75vw; position: relative;  transform: scale3d(1.2, 1, 1);  transform-origin: left;}
+#main .tit-box-wrap {overflow: hidden; white-space: nowrap; transform: translate3d(0, 0, 0); margin: 0 8vw; }
+#main .swiper-mo .tit-box-wrap {overflow: hidden;  margin: 0 8vw; }
+#main .tit-box-wrap.on {animation: showing 2s;}
+#main .tit-box-wrap .tit-cnt-txt {display: inline-block; font-size: 8vw; position: relative;  transform: scale3d(1.2, 1, 1);  transform-origin: left;}
 #main .tit-box-wrap.on .tit-cnt-txt {display: inline-block; transform: scale3d(1, 1, 1); transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);}
 #main .tit-box-wrap .tit-cnt-txt::after{content: ''; display: inline-block; width: 100vw; height: 10px; background-color: #fff; margin-left: 30px; position: absolute; top: 50%; left: 100%; transform: translate(0, -50%);}
 #main .tit-explain {font-size: 3.5vw; margin-top: 10px;}
+#main .swiper-mo .tit-explain { padding: 0 8vw;}
+
 @keyframes showing{
   0% {width: 0%;}
   100% {width: 100%;}
@@ -102,10 +106,12 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .wrapper .bg-deco-yellow { background-color: #ffc200; position: absolute; width: 100%; height: 70%; top: 0; left: 0; right: 0; transform: skewY(-30deg); transform-origin: top center; }
 #main .wrapper .bg-deco-img {background: url('../images/bottom_bg.jpeg') no-repeat;  position: absolute; width: 100%; height: 50%; top: auto; bottom: 0; left: 0; right: 0; background-position: top; }
 
+#main .content-tit.inner-wrap.swiper-mo{padding: 0; position: relative;}
+#main .content-box-wrap {overflow: hidden; position: relative; top: 0; left: 0; width: 100%; height: 100%;}
+#main .content-box-wrap .dummy {opacity: 0; width: 100vw; height: 130vw;}
 /*hexagon--S*/
-.hexGrid {display: flex; flex-wrap: wrap; width: 95%; margin: 0 auto; overflow: hidden; font-family: 'Raleway', sans-serif; font-size: 15px; list-style-type: none; justify-content: space-between; margin-top: 40px;}
-.hexGrid > li { width: 100%; display: none;}
-.hexGrid > li:first-child{display: block;}
+.hexGrid {display: flex; flex-wrap: nowrap; justify-content: flex-start; width: 10000px; margin: 0 auto; overflow: hidden; font-size: 15px; list-style-type: none; margin-top: 40px; position: absolute; left: 0; top: 0; height: 135vw;}
+.hexGrid > li { width: 70vw; padding-left: 60px; position: absolute; left: 0; top: 0;}
 .hex-cont {display: inline-block; position: relative; width: 100%; padding-top: 125%; overflow: hidden; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);}
 .hex-cont.has-border .hex-border { display: block; position: absolute; top: -50%; left: 0; width: 100%; height: 200%; overflow: hidden; visibility: hidden; -webkit-transform: rotate(120deg); transform: rotate(120deg); -webkit-transform-origin: 50% 50%; transform-origin: 50% 50%; cursor: pointer;}
 .hex-cont.has-border .hex-border-inner {display: block; overflow: hidden; width: 100%; height: 100%; visibility: hidden; -webkit-transform: rotate(-60deg); transform: rotate(-60deg); -webkit-transform-origin: 50% 50%; transform-origin: 50% 50%;}

@@ -12,7 +12,12 @@ if (matchMedia("screen and (min-width: 980px)").matches) {
   checkVisibility('div.tit-box-wrap');
   menuToggle();
   bottomFixed();
+  swipeContent('div.content-box-wrap > ul.hexGrid', 1)
 }
+
+$(document).on('click', 'a[href="#"]', function(e){
+	e.preventDefault();
+});
 
 function setImageSlide(selector, first) {
   var $selector = $(selector);
@@ -48,7 +53,7 @@ function setImageSlide(selector, first) {
     slidePrev = (n <= 1) ? numSlide : (n - 1);
     slideNext = (n >= numSlide) ? 1 : (n + 1);
   }
-  
+  return false;
 }
 
 
@@ -140,6 +145,63 @@ function bottomFixed() {
     }else if (scrollAmt + windowHeight >= footerHeight){
       $('.float-btn-mo').addClass('stop');
     }
-
   });
+}
+
+//swipe js
+function swipeContent (selector, first) {
+  var $selector = $(selector);
+  var numSlide = $selector.children('li').length;
+  var slideNow = 0;
+  var slidePrev = 0;
+  var slideNext = 0;
+  var slideFirst = first;
+  var startX = 0;
+  var delX = 0;
+  var offsetX = 0;
+  var isBlocked = false
+
+  showSlide(slideFirst);
+
+  $selector.children('li').each(function(i) {
+    $(this).css({'left': (i * 100) + '%', 'display': 'block'});
+  });
+
+  $selector.on('mousedown', function(e) {
+    e.preventDefault();
+    $(this).css({'transition': 'none'});
+    startX = e.clientX;
+    offsetX = $(this).position().left;
+    $(document).on('mousemove', function(e) {
+      delX = e.clientX - startX;
+      if (Math.abs(delX) > 5) isBlocked = true;
+      if ((slideNow === 1 && delX > 0) || (slideNow === numSlide && delX < 0)) {
+        delX = delX / 10;
+      }
+      $selector.css({'left': (offsetX + delX) + 'px'});
+
+      $(document).on('mouseup', function() {
+        $(document).off('mousemove mouseup');
+        if (delX < -50 && slideNow !== numSlide) {
+          showSlide(slideNext);
+        } else if (delX > 50 && slideNow !== 1) {
+          showSlide(slidePrev);
+        } else {
+          showSlide(slideNow);
+        }
+        delX = 0;
+      })
+    })
+  })
+  function showSlide(n) {
+    if (slideNow === 0) {
+      $selector.css({'transition': 'none', 'left': -((n - 1) * 100) + '%'});
+    } else {
+      $selector.css({'transition': 'left 0.5s', 'left': -((n - 1) * 100) + '%'});
+    }
+    slideNow = n;
+    slidePrev = (n <= 1) ? numSlide : (n - 1);
+    slideNext = (n > numSlide) ? 1 : (n + 1);
+  }
+
 }

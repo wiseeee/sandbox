@@ -39,7 +39,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #header .gnb-wrap{display: none;}
 #header .gnb-wrap > a {display: none;}
 #header .gnb-wrap.on {width: 100vw; height: 100vh; display: block; background-color: #000; position: fixed; top: 0; overflow: auto;}
-#header .gnb-wrap.on .bg-deco-blue-mo{position: absolute; width: 0; height: 0; border-style: solid; border-width: 150px 300px 0 0; border-color: #2133b5 transparent transparent transparent; }
+#header .gnb-wrap.on .bg-deco-blue-mo{position: absolute; width: 0; height: 0; border-style: solid; border-width: 25vw 55vw 0 0; border-color: #2133b5 transparent transparent transparent; }
 #header .gnb-wrap.on > a {display: block; position: absolute; top: 20px; right: 8vw; font-size: 50px;}
 #header .gnb-wrap .top-gnb {display: none;}
 #header .gnb-wrap .top-gnb > li {font-size: 12px;}
@@ -55,20 +55,20 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #header .gnb-wrap .only-mo-footer > ul {margin-left: -2vw;}
 #header .gnb-wrap .only-mo-footer > ul.gnb-info-lang > li {padding: 2vw; display: inline-block;}
 #header .gnb-wrap .only-mo-footer > ul.gnb-info > li {padding: 2vw;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid {width: 120px; margin-top: 0;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li {width: 100%; height: 100%;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li .hex-cont .hexagon-image-wrap{background-color:#000;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li .sns-img {position: relative;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li .sns-img::after {content:''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  width: 1em; height: 1em; background-size: contain; background-repeat: no-repeat;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li:nth-child(1) .sns-img::after {background-image: url('../images/icon_sns_youtube.png');}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li:nth-child(2) .sns-img::after {background-image: url('../images/icon_sns_facebook.png'); left: 57%;}
-#header .gnb-wrap .only-mo-footer > ul.hexGrid > li:nth-child(3) .sns-img::after {background-image: url('../images/icon_sns_insta.png');}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns {width: 60%; margin-top: 0; display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; }
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li {width: 20%; height: 100%;  margin-left: 3vw;}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li .hex-cont .hexagon-image-wrap{background-color:#000;}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li .sns-img {position: relative;}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li .sns-img::after {content:''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  width: 1em; height: 1em; background-size: contain; background-repeat: no-repeat;}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li:nth-child(1) .sns-img::after {background-image: url('../images/icon_sns_youtube.png');}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li:nth-child(2) .sns-img::after {background-image: url('../images/icon_sns_facebook.png'); left: 57%;}
+#header .gnb-wrap .only-mo-footer > ul.gnb-info-sns > li:nth-child(3) .sns-img::after {background-image: url('../images/icon_sns_insta.png');}
 
 
 
 #main .content-wrap {position: relative; }
 #main .content-wrap:not(:last-child) {padding-bottom: 10vw;}
-#main .bg-deco-red {position: absolute; width: 0; height: 0; border-style: solid; border-width: 150px 300px 0 0; border-color: #d03251 transparent transparent transparent; }
+#main .bg-deco-red {position: absolute; width: 0; height: 0; border-style: solid; border-width: 25vw 55vw 0 0; border-color: #d03251 transparent transparent transparent; }
 #main .bg-deco-blue {position: absolute; width: 0; height: 0; bottom: 0; right: 0; border-style: solid; border-width: 0 0 100px 200px; border-color: transparent transparent #2133b5 transparent;}
 #main .content-wrap > ul.slick-txt-wrap {margin-bottom: 150px;}
 #main .content-wrap > ul.slick-img-wrap > li.on {opacity: 1; transform: translate(0, 0) scale3d(1, 1, 1);; transition: transform .75s 0s cubic-bezier(0.165, 0.84, 0.44, 1),opacity .4s 0s;}

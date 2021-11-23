@@ -31,8 +31,8 @@
 @font-face {
     font-family: 'NotoSansKR';
     font-style: normal;
-    font-weight: 900;
+    font-weight: 800;
     src: local('※'),
-        url('../font/Montserrat/Montserrat-Black.ttf') format('truetype');
+        url('../font/Montserrat/Montserrat-ExtraBold.ttf') format('truetype');
     unicode-range: U+0041-005A, U+0061-007A;
 }

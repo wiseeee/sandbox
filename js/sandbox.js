@@ -1,28 +1,22 @@
 'use strict';
-if (matchMedia("screen and (min-width: 768px)").matches) {
-  // 980px 이상에서 사용할 JavaScript
-  $(document).ready(function() {
-    preventDefaultAnchor()
-    setImageSlide('#main .slick-wrap', 1);
+
+$(document).ready(function() {
+  preventDefaultAnchor()
+    setImageSlide('#main .slick-wrap', 1, true, 3000);
     squareCheckScroll();
     goToTop();
-    topCheckScroll();
-    checkVisibility('div.tit-box-wrap');
-  });
-} else {
-  // 768px 미만에서 사용할 JavaScript
-  $(document).ready(function() {
-    preventDefaultAnchor()
-    setImageSlide('#main .slick-wrap', 1);
-    checkVisibility('div.tit-box-wrap');
     menuToggle();
     bottomFixed();
+    topCheckScroll();
+    checkVisibility('div.tit-box-wrap');
     setGNB('#header ul.main-gnb > li > a')
     swipeContent('div.content-box-wrap > .drag-wrap > ul.hexGrid', 1)
     swipeContent('div.content-box-wrap > .drag-wrap > ul.news-box-wrap', 1)
     scrollShowLeft('div.content-box-wrap > .drag-wrap')
-  });
-}
+
+})
+
+
 
 // a[href="#"] 기본 동작 방지(상단 이동)
 function preventDefaultAnchor() {
@@ -31,13 +25,16 @@ function preventDefaultAnchor() {
   });
 }
 
-function setImageSlide(selector, first) {
+function setImageSlide(selector, first, status, speed) {
   var $selector = $(selector);
-  var numSlide = $('#main .slick-txt-wrap li').length;
+  var numSlide = $selector.find('.slick-txt-wrap li').length;
   var slideNow = 0;
   var slidePrev = 0;
   var slideNext = 0;
   var slideFirst = first;
+  var timerId = '';
+  var timerSpeed = speed;
+  var isTimerOn = status;
 
   $selector.find('.control a.prev').on('click', function() {
     showSlide(slidePrev);
@@ -48,6 +45,12 @@ function setImageSlide(selector, first) {
   });
 
     showSlide(slideFirst);
+
+  if (isTimerOn === false) {
+    clearTimeout(timerId);
+  } else {
+    timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+  }
 
   function showSlide(n) {
     //슬라이드 효과
@@ -64,6 +67,10 @@ function setImageSlide(selector, first) {
     slideNow = n;
     slidePrev = (n <= 1) ? numSlide : (n - 1);
     slideNext = (n >= numSlide) ? 1 : (n + 1);
+    if (isTimerOn === true) {
+      clearTimeout(timerId);
+      timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+    }
   }
   return false;
 }
@@ -163,7 +170,7 @@ function bottomFixed() {
 //swipe js
 function swipeContent (selector, first) {
   var $selector = $(selector);
-  var numSlide = $selector.children('li').length;
+  var numSlide = $selector.find('li').length;
   var slideNow = 0;
   var slidePrev = 0;
   var slideNext = 0;
@@ -177,25 +184,26 @@ function swipeContent (selector, first) {
   var minOffsetLeft = 0;
   var timerId = '';
   var counter = 0;
+  var isBlocked = true;
 
   resetUI();
   showSlide(slideFirst);
 
-  $selector.on('mousedown', function(e) {
+  $selector.on('touchstart', function(e) {
     e.preventDefault();
     $(this).css({'transition': 'none'});
-    startX = e.clientX;
+    startX = e.touches[0].clientX;
     offsetX = $(this).position().left;
-    $(document).on('mousemove', function(e) {
-      delX = e.clientX - startX;
+    $(document).on('touchmove', function(e) {
+      delX = e.touches[0].clientX - startX;
       if (Math.abs(delX) > 5) isBlocked = true;
       if ((slideNow === 1 && delX > 0) || (slideNow === numSlide && delX < 0)) {
-        delX = delX / 10;
+        delX = delX / 10; //마지막 or 첫번째 슬라이드일 때 조금만 움직이는거
       }
       $selector.css({'left': (offsetX + delX) + 'px'});
 
-      $(document).on('mouseup', function() {
-        $(document).off('mousemove mouseup');
+      $(document).on('touchend', function() {
+        $(document).off('touchmove touchend');
         if (delX < -50 && slideNow !== numSlide) {
           if(offsetLeft <= minOffsetLeft) {
             $selector.css({'transition': 'none'}).stop(true).animate({'left': (minOffsetLeft - 10) + 'px'}, 80).animate({'left': minOffsetLeft + 'px'}, 160, function() {
@@ -311,3 +319,4 @@ function setGNB(selector) {
     }
   }
 }
+

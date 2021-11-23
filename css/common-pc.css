@@ -61,7 +61,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap > ul.slick-img-wrap > li.on {opacity: 1; transform: translate(0, 0) scale3d(1, 1, 1);; transition: transform .75s 0s cubic-bezier(0.165, 0.84, 0.44, 1),opacity .4s 0s;}
 #main .content-wrap > ul.slick-img-wrap > li.off {opacity: 0; transform: translate(10%, -5%) scale3d(1.15, 1.1, 15);; transition: transform .4s 0s cubic-bezier(0.445, 0.05, 0.55, 0.95),opacity .2s 0s;}
 #main .content-wrap > ul.slick-img-wrap > li {position: absolute; top: 0; left: 0; right: 0; width: auto; height: 1500px; z-index: 0;}
-#main .content-wrap > ul.slick-img-wrap > li .slick-img {width: 120%; height: 1500px; background-size: cover; background-repeat: no-repeat; background-position: right;}
+#main .content-wrap > ul.slick-img-wrap > li .slick-img {width: 125%; height: 1500px; background-size: cover; background-repeat: no-repeat; background-position: right;}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(1) .slick-img {background-image: url('../images/slick_02.png');}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(2) .slick-img {background-image: url('../images/slick_01.png');}
 #main .content-wrap > ul.slick-img-wrap > li:nth-child(3) .slick-img {background-image: url('../images/slick_03.png');}
@@ -75,7 +75,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-txt{opacity: 0; transform: translateX(30%); }
 #main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-more{opacity: 0; transform: translateX(30%); }
 #main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .btn-wrap{opacity: 0; transform: translateX(50%); }
-#main .content-wrap .tit-txt {font-size: 90px; color: #e3114e; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1; }
+#main .content-wrap .tit-txt {font-size: 85px; color: #e3114e; letter-spacing: -0.03em; text-transform: uppercase; line-height: 1; }
 #main .content-wrap .tit-more {display: block; font-size: 50px; margin-left: 42px;}
 #main .content-wrap .btn-wrap {margin-top: 60px; position:relative; z-index: 1;}
 #main .content-wrap .btn-wrap .btn-main-box {border: 1px solid #fff; padding: 10px 28px; cursor: pointer;}
@@ -102,7 +102,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .wrapper {position: relative;}
 #main .wrapper .bg-deco-img {background: url('../images/bottom_bg.jpeg') no-repeat;  position: absolute; width: 100%; height: 50%; top: auto; bottom: 0; left: 0; right: 0; background-position: top; }
 #main .wrapper .bg-deco-yellow { background-color: #ffc200; position: absolute; width: 100%; height: 70%; top: 0; left: 0; right: 0; transform: skewY(-30deg); transform-origin: top center; margin-top: 50px;}
-
+#main .content-wrap .drag-wrap.on {width: 100%; overflow: hidden;}
 /*hexagon--S*/
 .hexGrid {display: flex; flex-wrap: wrap; width: 95%; margin: 0 auto; overflow: hidden; font-family: 'Raleway', sans-serif; font-size: 15px; list-style-type: none; justify-content: space-between; margin-top: 40px;}
 .hexGrid > li { width: 30%;}
@@ -125,7 +125,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 .hexGrid .item-box .item-num {font-size: 20px; margin-top: 15px;}
 /*hexagon--E*/
 
-#main .news-box-wrap {display: flex; justify-content: space-between; margin-top: 60px; flex-wrap: wrap; gap: 20px;}
+#main .news-box-wrap {display: flex; justify-content: space-between; margin-top: 60px; flex-wrap: wrap; gap: 20px; width: 100%!important;}
 #main .news-box-wrap > li {width: 31%; box-sizing:border-box; background-color: #fff; padding: 38px 30px 48px 38px; position: relative;}
 #main .news-box-wrap > li .hex-cnt-wrap {width: 30%;}
 #main .news-box-wrap > li .hex-cont .hexagon-image-wrap figure {background-image: url('../images/content_news_01.jpeg'); background-size: cover;}
@@ -212,7 +212,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
   #main .content-wrap .tit-more {font-size: 4vw;}
   #main .content-wrap .btn-wrap .btn-main-box {padding: .8vw 2.5vw; }
   #main .content-wrap > ul.slick-txt-wrap {height: 45vw;}
-  #main .content-wrap > ul.slick-img-wrap > li .slick-img {width: 90vw; height: 117vw;}
+  #main .content-wrap > ul.slick-img-wrap > li .slick-img {width: 95vw; height: 95vw;}
   #main .tit-box-wrap .tit-cnt-txt {font-size: 4.5vw;}
   #main .tit-explain {font-size: 1.5vw; margin-top: .7vw;}
   .hexGrid .item-box {margin: 1.4vw auto 0; }

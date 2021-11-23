@@ -83,9 +83,9 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap > ul.slick-txt-wrap > li.on > .inner-wrap .tit-txt{opacity: 1; transform: translateX(0%); transition: opacity 0.3s .25s ease-out, transform .65s 0s cubic-bezier(0.55, 0.01, 0.04, 1);}
 #main .content-wrap > ul.slick-txt-wrap > li.on > .inner-wrap .tit-more{opacity: 1; transform: translateX(0%); transition: opacity 0.3s .35s ease-out,transform .65s .1s cubic-bezier(0.55, 0.01, 0.04, 1);}
 #main .content-wrap > ul.slick-txt-wrap > li.on > .inner-wrap .btn-wrap{opacity: 1; transform: translateX(0%); transition: opacity 0.3s .45s ease-out, transform .65s .2s cubic-bezier(0.55, 0.01, 0.04, 1);}
-#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-txt{opacity: 0; transform: translateX(30%); }
-#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-more{opacity: 0; transform: translateX(30%); }
-#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .btn-wrap{opacity: 0; transform: translateX(50%); }
+#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-txt{opacity: 0; transform: translateX(200%);}
+#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .tit-more{opacity: 0; transform: translateX(200%);}
+#main .content-wrap > ul.slick-txt-wrap > li.off > .inner-wrap .btn-wrap{opacity: 0; transform: translateX(200%);}
 
 
 #main .content-wrap .tit-txt {position: relative; font-size: 8.75vw; color: #e3114e; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1;}
@@ -94,7 +94,7 @@ body {font-family: 'NotoSansKR', sans-serif; font-weight: 900; font-size: 16px; 
 #main .content-wrap .btn-wrap .btn-main-box {border: 1px solid #fff; padding: 2vw 4vw; cursor: pointer; font-size: 3vw; display: inline-block;}
 #main .content-wrap .btn-wrap .btn-main-box:hover {background-color: #fff; color: #1a2939;}
 #main .content-wrap .control > a.prev,
-#main .content-wrap .control > a.next {position: absolute; top: 60%; width: 40px; font-size: 6vw;}
+#main .content-wrap .control > a.next {position: absolute; top: 45%; width: 40px; font-size: 6vw;}
 #main .content-wrap .control > a.prev {left: 20px;}
 #main .content-wrap .control > a.prev:hover {transform:translateX(-5px); transition: 0.5s all ease;}
 #main .content-wrap .control > a.next {right: 20px;}

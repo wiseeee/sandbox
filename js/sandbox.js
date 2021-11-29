@@ -2,17 +2,17 @@
 
 $(document).ready(function() {
   preventDefaultAnchor()
-    setImageSlide('#main .slick-wrap', 1, true, 3000);
-    squareCheckScroll();
-    goToTop();
-    menuToggle();
-    bottomFixed();
-    topCheckScroll();
-    checkVisibility('div.tit-box-wrap');
-    setGNB('#header ul.main-gnb > li > a')
-    swipeContent('div.content-box-wrap > .drag-wrap > ul.hexGrid', 1)
-    swipeContent('div.content-box-wrap > .drag-wrap > ul.news-box-wrap', 1)
-    scrollShowLeft('div.content-box-wrap > .drag-wrap')
+  setImageSlide('#main .slick-wrap', 1, true, 3000);
+  squareCheckScroll();
+  goToTop();
+  menuToggle();
+  bottomFixed();
+  topCheckScroll();
+  checkVisibility('div.tit-box-wrap');
+  setGNB('#header ul.main-gnb > li > a')
+  swipeContent('div.content-box-wrap > .drag-wrap > ul.hexGrid', 1)
+  swipeContent('div.content-box-wrap > .drag-wrap > ul.news-box-wrap', 1)
+  scrollShowLeft('div.content-box-wrap > .drag-wrap')
 
 })
 
